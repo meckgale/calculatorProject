@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.frame {
+    height: 30em;
+    width: 20em;
+    border: solid 2px;
+}
+
+.numbers button{
+    padding: 2em 2em;
+    
+}
