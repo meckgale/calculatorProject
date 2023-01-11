@@ -10,27 +10,40 @@
 <body>
     <div class="frame">
         <div class="buttons">
-            <div class="numbers">
-                <button>0</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
+           <div class="left-div">
+            <div class="bottom layer">
+                <button class="left" id="zero">0</button>
+                <button class="right" id="comma">,</button>
             </div>
-            <div class="operation">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>=</button>
-                <button>.</button>
-                <button>AC</button>
+            <div class="first layer">
+                <button class="left">1</button>
+                <button class="middle">2</button>
+                <button class="right">3</button>
             </div>
+            <div class="second layer">
+                <button class="left">4</button>
+                <button class="middle">5</button>
+                <button class="right">6</button>
+            </div>
+            <div class="third layer">
+                <button class="left">7</button>
+                <button class="middle">8</button>
+                <button class="right">9</button>
+            </div>
+            <div class="top layer">
+                <button class="left" id="clear">AC</button>
+                <button class="right" id="negative">+/-</button>
+            </div>
+           </div>
+           <div class="right-div">
+            <div class="operation layer">
+                <button class="operand">=</button>
+                <button class="operand">+</button>
+                <button class="operand">-</button>
+                <button class="operand">*</button>
+                <button class="operand">/</button>
+            </div> 
+           </div>            
         </div>
         <div class="console"></div>
     </div>
