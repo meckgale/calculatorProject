@@ -45,7 +45,7 @@ body {
 
 .operation.layer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .left {
@@ -65,7 +65,7 @@ body {
 
 #zero {
     display: flex;
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 #comma {
@@ -75,13 +75,9 @@ body {
 
 #clear {
     display: flex;
-    flex-grow: 2;
-}
-
-#negative {
-    display: flex;
     flex-grow: 1;
 }
+
 
 .operand {
     display: flex;
