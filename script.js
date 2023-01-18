@@ -40,72 +40,40 @@ const operate = (firstInput, lastInput, operationSign) => {
     return operateFunctions[operationSign](firstNumber, lastNumber);
 }
 
-const display = document.querySelector('.console');
+const clickedButtons = document.querySelectorAll('.buttons');
 
-const clickedButton = document.querySelector('.buttons');
+const screen = document.querySelector('.console');
+
+const operands = document.querySelectorAll('.operation');
 
 let input;
-
 let inputArray = [];
 
-let inputString;
 
-let inputNumber;
+clickedButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        input = e.target.value;
+        if(input !== operands){
+            inputArray.push(input);
+            if(!inputArray.includes(operands)) {
+                firstInput = inputArray.join('');
+                screen.textContent = firstInput
+            }
+            else if(inputArray.includes(operands)) {
+                let index = inputArray.indexOf(operands);
+                lastInput = inputArray.slice(index).join('');
+                screen.textContent = lastInput
+            }
+        }
+        else if(input === operands && operands !== '='){
+            input = operationSign;
+            screen.textContent = operationSign;
+        }
+    })  
+    screen.textContent = inputArray;
+    operate();
+})
 
-const getInput = () => clickedButton.addEventListener('click', (event) => {
-      input = event.target.value;
-      inputArray.push(input);
-      inputString = inputArray.join("");
-      inputNumber = parseFloat(inputString);
-      display.textContent = inputNumber;
-      return inputNumber;
-});
-
-getInput();
-
-const operand = document.querySelector('.operand');
-
-const numbers = document.querySelector('.left-div')
-
-
-
-
-// function processor() {
-//     let data = [];
-//     if(input !== operand){
-//         data.push(input);
-//         firstInput = data.join('');
-//         return firstInput;
-//     }
-//     else{
-//         operationSign = input;
-//         return operationSign;
-//     }
-// }
-
-
-// let numbers = '';
-
-// const operand = document.querySelector('.operand');
-
-// const clickedButton = document.querySelector('.buttons');
-//     clickedButton.addEventListener('click', (event) => {
-//         let input = (event.target.value);
-//         if(input !== operand){
-//             numbers += input;  
-//             display.textContent = numbers;
-//             console.log(input);
-//             console.log(numbers);
-//         }
-//         else if(input === operand){
-//             numbers = "";
-//             display.textContent = numbers;
-//             console.log(input);
-//             console.log(numbers);
-//         }
-        
-        
-//     })
 
 
 
